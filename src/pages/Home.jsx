@@ -103,8 +103,18 @@ export default function HomePage({ isAuth }) {
                         >
                             Logout
                         </button>
-                        <Link to={"/login"}>Login</Link>
-                        <Link to={"/signup"}>SignUp</Link>
+
+                        {!isAuth &&
+                            (
+                                <div className="flex gap-6">
+                                    <Link to={"/signup"}>SignUp</Link>
+
+                                    <Link to={"/login"}>Login</Link>
+                                </div>
+                            )
+                        }
+                        {/* <Link to={"/login"}>Login</Link>
+                        <Link to={"/signup"}>SignUp</Link> */}
                     </div>
                 </nav>
             </div>
